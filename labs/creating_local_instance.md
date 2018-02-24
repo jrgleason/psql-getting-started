@@ -22,42 +22,45 @@
     ![postgres prompt](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_prompt.png "Postgres Prompt")
 
 10. Although postgres is setup and working, we have not mapped some properties we need to access it through the command line. We will use this for functionality such as importing SQL scripts in later labs.
-  a. OSX
 
-      1. Open a terminal 
-      2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
-          a. There is an existing .bash_profile
-              1. Type `shift+g` to get to the bottom
-              2. Type `o` to start a new cursor on the last line
-          b. There is no existing file
-              1. Type `i` this should provide you with a cursor to type
-      5. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
-      6. Hit `esc` then `:wq` this should close you out of vi
-      7. Close and reopen terminal
-      8. Make sure it worked by typing in `psql` it should now be able to find the command.
+    a. OSX
+
+        1. Open a terminal 
+        2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
+            a. There is an existing .bash_profile
+                1. Type `shift+g` to get to the bottom
+                2. Type `o` to start a new cursor on the last line
+            b. There is no existing file
+                1. Type `i` this should provide you with a cursor to type
+        5. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
+        6. Hit `esc` then `:wq` this should close you out of vi
+        7. Close and reopen terminal
+        8. Make sure it worked by typing in `psql` it should now be able to find the command.
   
-  b. Windows
+    b. Windows
 
-      1. Open the windows menu
-      2. Right click on Computer and select properties
-      3. Choose environmental variables
-      4. Under the user section 
+        1. Open the windows menu
+        2. Right click on Computer and select properties
+        3. Choose environmental variables
+        4. Under the user section 
       
-          a. If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`  **TODO: Double check install location**
+            a. If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`  **TODO: Double check install location**
 
-          b. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
+            b. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
 
-      5. Open a command prompt
-      6. type `psql` and make sure that the application has been configured properly.    
-
-  c. Linux **TODO**
+        5. Open a command prompt
+        6. type `psql` and make sure that the application has been configured properly.    
 
 11. Now you are ready to create your database from this class type `create database class;`. This creates a table in the database called class. The semicolon is EXTREMELY important, otherwise it may be waiting for more commands and not actually creating the entry.
 12. Now you should be able to type `\list` and see your new database named class
 
     ![postgres result](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_result_add_class.png "Postgres Class")
 
-13. This database will be the first database we use in the next section on Querying
+13. Now try connecting to the DB by issuing the following command `\c class`. You should see the following...
+
+        You are now connected to database "postgres" as user "jgleason".
+
+14. Now lets quit by issuing the `\q` command        
 
 ## Review ##
 
