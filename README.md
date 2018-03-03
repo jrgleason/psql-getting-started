@@ -5,7 +5,7 @@
 This repository houses the couse material for the basic SQL class offered by Columbus State Community College.
 
 * [Labs](./labs/README.md)
-* [Slides] (https://slides.com/jackiegleason/deck-11)
+* [Slides](https://slides.com/jackiegleason/deck-11)
 
 ## Admin Information ##
 
