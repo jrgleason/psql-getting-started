@@ -20,7 +20,3 @@
 ## Review ##
 
 In this lab we looked at loading data from a SQL script file. We also used this data to query an item.
-
-## Takehome Work
-
-1. Create your own script for adding users and load them into your DB.

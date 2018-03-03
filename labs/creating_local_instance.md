@@ -1,4 +1,4 @@
-# Lab 1: Getting Started #
+# Install Postgres Locally
 
 1. Go to [the download page](https://www.postgresql.org/download)
 2. Find the download for your operating system in the list. 
