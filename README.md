@@ -1,4 +1,9 @@
-# Columbus State Community College SQL Course #
+<p align="center"><a href="https://vuejs.org" target="_blank"><img width="100" src="https://www.coursehero.com/img/school_seals/1779.jpg" alt="CSCC logo"></a></p>
+<h2> Columbus State Community College SQL Course </h2>
+
+<p align="center">
+  <a href="https://cscc7730.slack.com/"><img src="https://img.shields.io/badge/chat-on%20slack-7289da.svg" alt="Chat"></a>
+</p>
 
 ## Introduction ##
 
