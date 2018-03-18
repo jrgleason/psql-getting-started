@@ -37,19 +37,19 @@
       7. Close and reopen terminal
       8. Make sure it worked by typing in `psql` it should now be able to find the command.
   
-    b. Windows
+    a. Windows
 
-        1. Open the windows menu
-        2. Right click on Computer and select properties
-        3. Choose environmental variables
-        4. Under the user section 
+      1. Open the windows menu
+      2. Right click on Computer and select properties
+      3. Choose environmental variables
+      4. Under the user section 
       
-            a. If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`  **TODO: Double check install location**
+        a. If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`
 
-            b. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
+        a. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
 
-        5. Open a command prompt
-        6. type `psql` and make sure that the application has been configured properly.    
+      5. Open a command prompt
+      6. type `psql` and make sure that the application has been configured properly.    
 
 11. Now you are ready to create your database from this class type `create database class;`. This creates a table in the database called class. The semicolon is EXTREMELY important, otherwise it may be waiting for more commands and not actually creating the entry.
 12. Now you should be able to type `\list` and see your new database named class
