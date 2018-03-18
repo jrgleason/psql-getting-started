@@ -22,39 +22,27 @@
     ![postgres prompt](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_prompt.png "Postgres Prompt")
 
 10. Although postgres is setup and working, we have not mapped some properties we need to access it through the command line. We will use this for functionality such as importing SQL scripts in later labs.
-
-  a. OSX
-
-    1. Open a terminal 
-    2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
-      
-      a. There is an existing .bash_profile
-      
-        1. Type `shift+g` to get to the bottom
-        1. Type `o` to start a new cursor on the last line
-            
-      a. There is no existing file
-                
-        1. Type `i` this should provide you with a cursor to type
-      
-    5. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
-    6. Hit `esc` then `:wq` this should close you out of vi
-    7. Close and reopen terminal
-    8. Make sure it worked by typing in `psql` it should now be able to find the command.
-  
-  a. Windows
-
-      1. Open the windows menu
-      2. Right click on Computer and select properties
-      3. Choose environmental variables
-      4. Under the user section 
-      
-        a. If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`
-
-        a. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
-
-      5. Open a command prompt
-      6. type `psql` and make sure that the application has been configured properly.    
+    1. OSX
+        2. Open a terminal 
+        2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
+            3. There is an existing .bash_profile
+        2. Type `shift+g` to get to the bottom
+        2. Type `o` to start a new cursor on the last line    
+            3. There is no existing file   
+        2. Type `i` this should provide you with a cursor to type
+        2. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
+        2. Hit `esc` then `:wq` this should close you out of vi
+        2. Close and reopen terminal
+        2. Make sure it worked by typing in `psql` it should now be able to find the command.
+    1. Windows
+        2. Open the windows menu
+        2. Right click on Computer and select properties
+        2. Choose environmental variables
+        2. Under the user section 
+            3.If there is a PATH variable select that one for editing. Append the following `c:\Program Files\PostGres\bin`
+            3. If there isn't an existing PATH variable add a new one and input the following `%PATH%;c:\Program Files\PostGres\bin`
+        2. Open a command prompt
+        2. type `psql` and make sure that the application has been configured properly.    
 
 11. Now you are ready to create your database from this class type `create database class;`. This creates a table in the database called class. The semicolon is EXTREMELY important, otherwise it may be waiting for more commands and not actually creating the entry.
 12. Now you should be able to type `\list` and see your new database named class
