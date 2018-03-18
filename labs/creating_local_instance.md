@@ -3,23 +3,23 @@
 1. Go to [the download page](https://www.postgresql.org/download)
 2. Find the download for your operating system in the list. 
 
-    ![postgres site](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_site.png "Site List")
+    ![postgres site](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_site.png "Site List")
 
 3. Download and run the package
 4. Follow prompts, make sure to write down the password you create for postgres user
 5. Note the folder you install the application into
 6. Once installation is finished go to the folder you installed it to and open PSQL
 
-    ![postgres folder](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_folder.png "Postgress Folder")
+    ![postgres folder](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_folder.png "Postgress Folder")
 
 7. You should see the following prompts. Assuming you selected the defaults when you were installing, you should just be able to hit enter to accept the defaults (i.e. [localhost] the default value is localhost)
 
-    ![postgres init](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_config.png "Postgres Config")
+    ![postgres init](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_config.png "Postgres Config")
 
 8. Input the password you created above
 9. Now you should see a prompt like this…
 
-    ![postgres prompt](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_prompt.png "Postgres Prompt")
+    ![postgres prompt](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_prompt.png "Postgres Prompt")
 
 10. Although postgres is setup and working, we have not mapped some properties we need to access it through the command line. We will use this for functionality such as importing SQL scripts in later labs.
 
@@ -54,7 +54,7 @@
 11. Now you are ready to create your database from this class type `create database class;`. This creates a table in the database called class. The semicolon is EXTREMELY important, otherwise it may be waiting for more commands and not actually creating the entry.
 12. Now you should be able to type `\list` and see your new database named class
 
-    ![postgres result](https://bitbucket.org/jgleason/cbus-state-sql/raw/HEAD/labs/resources/lab1/postgres_result_add_class.png "Postgres Class")
+    ![postgres result](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_result_add_class.png "Postgres Class")
 
 13. Now try connecting to the DB by issuing the following command `\c class`. You should see the following...
 

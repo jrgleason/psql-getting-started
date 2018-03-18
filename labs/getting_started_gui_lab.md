@@ -19,7 +19,7 @@
 
 5. Push the test button and confirm the configuration is correct.
 
-    ![SQLectron](./resources/lab1/sqlectron_view.png "SQLectron")
+    ![SQLectron](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/sqlectron_view.png "SQLectron")
 
 6. Select Save
 7. At the servers screen select Local Postgres and select connect

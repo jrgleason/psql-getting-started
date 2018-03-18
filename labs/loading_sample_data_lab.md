@@ -9,7 +9,7 @@
   c. `-a` (TODO)
   d. `-f` This is the name of the file used to import
 
-      ![postgre import script](./resources/postgres_import_sql_script.png "postgres import script")  
+      ![postgre import script](https://jrgleason.github.io/psql-getting-started/labs/resources/postgres_import_sql_script.png "postgres import script")  
 
 10. When prompted enter your password
 11. Notice all of the queries running. These are exactly like the queries we ran in the last lab. You can take a look at them by opening the `.sql` file in a normal text editor.
