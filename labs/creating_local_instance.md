@@ -25,17 +25,17 @@
 
     a. OSX
 
-        1. Open a terminal 
-        2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
+      1. Open a terminal 
+      2. Edit your `.bash_profile` file with `vi ~/.bash_profile`
             a. There is an existing .bash_profile
                 1. Type `shift+g` to get to the bottom
                 2. Type `o` to start a new cursor on the last line
             b. There is no existing file
                 1. Type `i` this should provide you with a cursor to type
-        5. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
-        6. Hit `esc` then `:wq` this should close you out of vi
-        7. Close and reopen terminal
-        8. Make sure it worked by typing in `psql` it should now be able to find the command.
+      5. Type `export PATH=$PATH:/Library/PostgreSQL/10/bin`
+      6. Hit `esc` then `:wq` this should close you out of vi
+      7. Close and reopen terminal
+      8. Make sure it worked by typing in `psql` it should now be able to find the command.
   
     b. Windows
 
