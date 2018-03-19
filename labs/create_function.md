@@ -24,3 +24,5 @@ This lab will focus on both Postgres declared functions, as well as those that w
             ON UPDATE CASCADE
             ON DELETE CASCADE
         );
+        
+5. Now lets create our own function, 

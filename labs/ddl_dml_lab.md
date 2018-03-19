@@ -10,7 +10,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
 ###### TODO: Load uuid function http://www.starkandwayne.com/blog/uuid-primary-keys-in-postgresql/ 
 
-1. Reset the database using the following command from the root of the project
+1. Reset the database using the following command from the root of the project<a name="resetdb"></a>
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
 
