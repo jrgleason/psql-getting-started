@@ -121,11 +121,11 @@ In this lab we learned the basics for adding and removing data inside Postgres. 
 
 1. Create a Product table with the following details (each letter does not have to be its own column)
 
-    a. An identifier
-    b. A readable name
-    b. A short description
-    c. A price
-    d. Flag to indicate if actively sold product 
-    e. Discount Level
+    1. An identifier
+    1. A readable name
+    1. A short description
+    1. A price
+    1. Flag to indicate if actively sold product 
+    1. Discount Level
 
     Type decisions are up to the student, also feel free to add additional properties you think might be nessacary.
