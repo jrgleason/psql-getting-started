@@ -4,18 +4,12 @@
 2. Open the Sqlectron application
 3. Select the add button at the top of the application
 4. In the form inside the modal
-
-    a. Name: Local PostGres
-
-    b. Type: PostGres
-
-    c. Server Address: localhost
-
-    d. User: postgres
-
-    e. Password: <See Lab 1>
-        
-    f. Database: class
+    1. Name: Local PostGres
+    1. Type: PostGres
+    1. Server Address: localhost
+    1. User: postgres
+    1. Password: <See Lab 1>
+    1. Database: class
 
 5. Push the test button and confirm the configuration is correct.
 
