@@ -10,7 +10,8 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 2. Log into [AWS](https://aws.amazon.com) using the credentials from the previous step
 
     ![Start Screen](./resources/start_screen.png "Start Screen")
-    a. This is what we call the root account. Much like most operating systems you should never use the root account in real like. However, even though it is fairly simple to learn, AWS security is only covered in the additional reading. For now we will use the root account
+    
+    1. This is what we call the root account. Much like most operating systems you should never use the root account in real like. However, even though it is fairly simple to learn, AWS security is only covered in the additional reading. For now we will use the root account
 
 3. Scroll down a bit and select RDS from the services menu
 
@@ -39,11 +40,11 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 9. There are a few other settings that need to be set
 
     ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")
-    a. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
+    1. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
 
       ![Oops Other Instance Settings](./resources/Free_Tier_Must_Be_Sub_20.png "Oops Other Instance Settings")  
 
-    b. Make sure to take note of the *database name*, *main username*, and *password*  
+    1. Make sure to take note of the *database name*, *main username*, and *password*  
 
 10. Finally we need to configure our VPC settings. A VPC is essentially the same as using a subnet. It allows you to isolate your network environment from others. We will also create a security group, this will provide a policy to connect to the database.
 
