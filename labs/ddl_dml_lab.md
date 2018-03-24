@@ -1,6 +1,5 @@
 # Table Constraints #
 ###### TODO: It might be good to add a 3rd table with a `NO ACTION` constraint ######
-###### TODO: We should add content to demonstrate `NOT NULL` and `UNIQUE` ######
 
 ## Introduction ##
 
@@ -47,7 +46,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
     > INSERT 0 1
 
-    a. Notice we are including the `(DISCOUNT)`, this is because the ID column is generated. So if we are leaving a property undefined we need to declare which properties we are actually setting, in this case that is just *DISCOUNT*. If we were to set both we could alternatively use `INSERT INTO CUSTOMER VALUES (101, 0);` when we want the ID to be *101*.
+    1. Notice we are including the `(DISCOUNT)`, this is because the ID column is generated. So if we are leaving a property undefined we need to declare which properties we are actually setting, in this case that is just *DISCOUNT*. If we were to set both we could alternatively use `INSERT INTO CUSTOMER VALUES (101, 0);` when we want the ID to be *101*.
 
 7. Run `SELECT * FROM CUSTOMER;` and take not of the ID field.    
     
@@ -109,7 +108,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
 1. Create schema for tables to track a user's transactions and also their favorite items.
 
 ## References ##
-1. https://w3resource.com/PostgreSQL/primary-key-constraint.php
-2. https://www.postgresql.org/docs/8.3/static/tutorial-fk.html
+1. (Primary Key)[https://w3resource.com/PostgreSQL/primary-key-constraint.php]
+2. (Foriegn Key)[https://www.postgresql.org/docs/8.3/static/tutorial-fk.html]
 
 

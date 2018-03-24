@@ -7,7 +7,7 @@
 
 3. Download and run the package
 4. Follow prompts, make sure to write down the password you create for postgres user
-5. Note the folder you install the application into
+    1. Note the folder you install the application into
 6. Once installation is finished go to the folder you installed it to and open PSQL
 
     ![postgres folder](https://jrgleason.github.io/psql-getting-started/labs/resources/lab1/postgres_folder.png "Postgress Folder")

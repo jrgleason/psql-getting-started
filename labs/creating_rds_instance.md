@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Platform as a service](https://en.wikipedia.org/wiki/Platform_as_a_service). These are designed to provide infrastructure, without needing a huge IT staff. The idea is to come up with common models and provide a hosted scalable solution to fill those models. This lab will work to teach you how to take advantage of one of these services called [RDS or Relational Data Service](https://aws.amazon.com/rds/). This service provides a SQL database, and even better it provides most major databases flavors. Even older versions of certain databases to help with compatibility issues.
+AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [PaaS (Platform as a service)](https://en.wikipedia.org/wiki/Platform_as_a_service). These are designed to provide infrastructure, without needing a huge IT staff. The idea is to come up with common models and provide a hosted scalable solution to fill those models. This lab will work to teach you how to take advantage of one of these services called [RDS or Relational Data Service](https://aws.amazon.com/rds/). This service provides a SQL database, and even better it provides most major databases flavors. Even older versions of certain databases to help with compatibility issues.
 
 ## Create an RDS Instance ##
 
@@ -11,7 +11,7 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 
     ![Start Screen](./resources/start_screen.png "Start Screen")
     
-    1. This is what we call the root account. Much like most operating systems you should never use the root account in real like. However, even though it is fairly simple to learn, AWS security is only covered in the additional reading. For now we will use the root account
+    1. This is what we call the root account. Much like most operating systems you should never use the root account in real life. However, even though it is fairly simple to learn, AWS security is only covered in the additional reading. For now we will use the root account
 
 3. Scroll down a bit and select RDS from the services menu
 
@@ -40,6 +40,7 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 9. There are a few other settings that need to be set
 
     ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")
+    
     1. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
 
       ![Oops Other Instance Settings](./resources/Free_Tier_Must_Be_Sub_20.png "Oops Other Instance Settings")  
@@ -52,8 +53,18 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 
 11. Select Finish
 
-    a. You should be able to see the newly created VPC in the VPC list
+    1. You should be able to see the newly created VPC in the VPC list
+    
     ![VPC List](./resources/Working_VPC_List.png "VPC List")
+
+## Allow for connections from Anywhere ##
+
+1. Although you should be careful, it is going to be tough to rely on only connecting from 1 IP. To avoid this go to the management console.
+2. Search for and select VPC
+3. In the left hand menu select security group
+4. Select the security group for your RDS instance (look for the port in the inbound rules)
+5. Select inbound rules on the bottom 
+6. Edit the rule and change
 
 ## Connect Via PSQL ##
 
@@ -79,15 +90,6 @@ AWS(Amazon Web Services) are a set of services otherwise known as a [PaaS or Pla
 6. You should finally see the SQL prompt
 
     ![RDS Connect PSQL](./resources/RDS_Connect_PSQL.png)
-
-## Allow for connections from Anywhere ##
-
-1. Although you should be careful, it is going to be tough to rely on only connecting from 1 IP. To avoid this go to the management console.
-2. Search for and select VPC
-3. In the left hand menu select security group
-4. Select the security group for your RDS instance (look for the port in the inbound rules)
-5. Select inbound rules on the bottom 
-6. Edit the rule and change
 
 ## Takehome Work
 
