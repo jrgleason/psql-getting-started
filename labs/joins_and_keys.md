@@ -127,10 +127,10 @@ Notice we get an error
 
     Now we only see the stores that have an address...    
 
-      name   |           address_line1            
-    ---------+------------------------------------
-     Store 1 | 420 Hubbard Ave Columbus, OH 43201
-    (1 row)
+        name   |           address_line1            
+        ---------+------------------------------------
+        Store 1 | 420 Hubbard Ave Columbus, OH 43201
+        (1 row)
 
 ##Takehome Work
 
