@@ -84,8 +84,8 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 
     ![RDS Public Address](./resources/RDS_Public_Address.png)
 
-5. Use PSQL to [connect to the RDS db](#connect-psql) created in the last lab
-    1. Use the following command `psql -h <public address> -p <port> -U <username> <database_name>`. In my case this looked like this `psql -h cscc-workforce.cmgirhyz5log.us-east-2.rds.amazonaws.com -p 5432 -U jgleason coffeeshop`
+5. Use PSQL to connect to the RDS db  created in the last lab
+    1. Use the following command `psql -h <public address> -p <port> -U <username> <database_name>`. In my case this looked like this `psql -h cscc-workforce.cmgirhyz5log.us-east-2.rds.amazonaws.com -p 5432 -U jgleason coffeeshop`<a name="connect-psql"></a>
 
 6. You should finally see the SQL prompt
 
