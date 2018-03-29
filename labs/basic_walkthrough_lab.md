@@ -21,7 +21,7 @@
         ---------------+------------------------+-----------
          address_line1 | character varying(100) | not null
 
-7. Lets make sure there are no records currently in the table using the following SQL query
+7. Let's make sure there are no records currently in the table using the following SQL query
 
         SELECT * FROM MAIN.ADDRESS;
 
@@ -38,7 +38,7 @@
 
     a. In PostGres `"` is different than `'`. Please make sure to use `'` when defining strings. This is similar in some other environments such as Microsoft SQLServer.
 
-9. Now lets try querying the table again
+9. Now let's try querying the table again
 
         SELECT * FROM MAIN.ADDRESS;
 
@@ -50,7 +50,7 @@
           1 | 400 W. Broad Columbus, OH 43217
 
 
-10. Now lets reverse everything we just did. To start with lets remove the record we added
+10. Now let's reverse everything we just did. To start with let's remove the record we added
 
         DELETE FROM MAIN.ADDRESS;
 
@@ -64,7 +64,7 @@
         ---------------
         (0 rows)    
 
-12. Next lets delete the table we created
+12. Next let's delete the table we created
 
         DROP TABLE MAIN.ADDRESS;
 
@@ -92,20 +92,20 @@
 
 5. Enter the following query into the text area `SELECT * FROM MAIN.ADDRESS;`. Click execute and notice that the application tells you there is no data in that table.
 
-6. Now lets go ahead and add a record. Enter the following query in the text area and hit execute `INSERT INTO MAIN.ADDRESS VALUES ('400 W. Broad St Columbus, OH 43217');`. You should see the message...
+6. Now let's go ahead and add a record. Enter the following query in the text area and hit execute `INSERT INTO MAIN.ADDRESS VALUES ('400 W. Broad St Columbus, OH 43217');`. You should see the message...
     
     > Query executed successfully. Affected rows: 1.
 
-7. Now lets try querying it again. Again type in `SELECT * FROM MAIN.ADDRESS;` and hit execute. You should now see a result.
+7. Now let's try querying it again. Again type in `SELECT * FROM MAIN.ADDRESS;` and hit execute. You should now see a result.
 
     ![sqlectron with data](https://jrgleason.github.io/psql-getting-started/labs/resources/sqlectron_record_shown_3 "")
 
-8. Ok now that we have everything in there lets learn how to clean up. First enter the following query in the text area to delete the record we just created `DELETE FROM MAIN.ADDRESS;`. This removes all records from the ADDRESS table, if we wanted to we could be more specific with `DELETE FROM MAIN.ADDRESS WHERE ADDRESS_LINE1 = '400 W. Broad St Columbus, OH 43217';`. Either way you should see this message...
+8. Ok now that we have everything in there let's learn how to clean up. First enter the following query in the text area to delete the record we just created `DELETE FROM MAIN.ADDRESS;`. This removes all records from the ADDRESS table, if we wanted to we could be more specific with `DELETE FROM MAIN.ADDRESS WHERE ADDRESS_LINE1 = '400 W. Broad St Columbus, OH 43217';`. Either way you should see this message...
 
     > Query executed successfully. Affected rows: 1.
 
-9. Now lets confirm it was deleted, again type `SELECT * FROM MAIN.ADDRESS;` in the text area. Notice this time no results are returned again.
-10. Now lets delete the table we created. To do this add the following to the text area `DROP TABLE MAIN.ADDRESS;` and execute. You should see the following message...
+9. Now let's confirm it was deleted, again type `SELECT * FROM MAIN.ADDRESS;` in the text area. Notice this time no results are returned again.
+10. Now let's delete the table we created. To do this add the following to the text area `DROP TABLE MAIN.ADDRESS;` and execute. You should see the following message...
 
     > Query executed successfully.
 
@@ -128,4 +128,4 @@ In this lab we learned the basics for adding and removing data inside Postgres. 
     1. Flag to indicate if actively sold product 
     1. Discount Level
 
-    Type decisions are up to the student, also feel free to add additional properties you think might be nessacary.
+    Type decisions are up to the student, also feel free to add additional properties you think might be necessary.

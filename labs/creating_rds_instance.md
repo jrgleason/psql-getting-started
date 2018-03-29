@@ -2,26 +2,26 @@
 
 ## Introduction ##
 
-AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [PaaS (Platform as a service)](https://en.wikipedia.org/wiki/Platform_as_a_service). These are designed to provide infrastructure, without needing a huge IT staff. The idea is to come up with common models and provide a hosted scalable solution to fill those models. This lab will work to teach you how to take advantage of one of these services called [RDS or Relational Data Service](https://aws.amazon.com/rds/). This service provides a SQL database, and even better it provides most major databases flavors. Even older versions of certain databases to help with compatibility issues.
+AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [PaaS (Platform as a service)](https://en.wikipedia.org/wiki/Platform_as_a_service). These are designed to provide infrastructure, without needing a huge IT staff. The idea is to come up with common models and provide a hosted scalable solution to fill those models. This lab will work to teach you how to take advantage of one of these services called [RDS or Relational Data Service](https://aws.amazon.com/rds/). This service provides a cloud-based SQL database, and even better it provides most major databases flavors. Even older versions of certain databases to help with compatibility issues.
 
 ## Create an RDS Instance ##
 
-1. Ensure you have already set up an AWS account through CSCC
-2. Log into [AWS](https://aws.amazon.com) using the credentials from the previous step
+1. Ensure you have already set up an AWS account through CSCC (see prereqs).
+2. Log into [AWS](https://aws.amazon.com) using the credentials from the previous step.
 
     ![Start Screen](./resources/start_screen.png "Start Screen")
     
-    1. This is what we call the root account. Much like most operating systems you should never use the root account in real life. However, even though it is fairly simple to learn, AWS security is only covered in the additional reading. For now we will use the root account
+    1. This is what we call the root account. Much like most operating systems you should never use the root account in real life situations. However, it is fairly simple to use as a learning tool and AWS security is only covered in the additional reading. For now we will use the root account for the AWS server while editing.
 
-3. Scroll down a bit and select RDS from the services menu
+3. Scroll down the page and select RDS from the services menu.
 
     ![Select RDS](./resources/Select_RDS_Screen_Small.png "Select RDS")
 
-4. Select Launch Instance
+4. Select the Launch Instance button.
 
     ![Launch Instance](./resources/Instance_List_Page_Before.png "Launch Instance")
 
-5. On the create instance page select RDS
+5. On the create instance page select RDS.
 
     ![Create Instance](./resources/Create_Instance_Page.png "Create Instance")
 
@@ -33,11 +33,11 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 
     ![Use Case Box](./resources/AWS_Use_Case_Box.png "Use Case Box")
 
-8. Next make sure that the micro instance type is selected
+8. Make sure that the micro instance type is selected. This will prevent from you accidently creating costly instances.
 
     ![Free Instance Type Selection](./resources/Free_Tier_Instance_Select.png "Free Instance Type Selection")
 
-9. There are a few other settings that need to be set
+9. There are a few other settings that need to be set before we can create an RDS instance.
 
     ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")
     
@@ -57,14 +57,26 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
     
     ![VPC List](./resources/Working_VPC_List.png "VPC List")
 
-## Allow for connections from Anywhere ##
+## Allow for connections from anywhere ##
 
-1. Although you should be careful, it is going to be tough to rely on only connecting from 1 IP. To avoid this go to the management console.
-2. Search for and select VPC
-3. In the left hand menu select security group
-4. Select the security group for your RDS instance (look for the port in the inbound rules)
-5. Select inbound rules on the bottom 
-6. Edit the rule and change
+1. By default AWS only allows access from 1 IP. What if you happen to be in the coffee shop or school and want to access RDS? To accomplish this we will be opening our RDS instance to public traffic.
+1. Search for and select VPC in AWS.
+
+    ![VPC Search](./resources/AWS_VPC_SEARCH.png "VPC search")
+
+1. In the left hand menu, scroll down and select security group.
+
+    ![Security Group](./resources/AWS_sec_grps.png "Security Group")
+
+1. Select the security group for your RDS instance (look for the port in the inbound rules).
+
+    ![Security Group Selected](./resources/aws_rds_select_grp.png "RDS Security Group")
+
+1. Select inbound rules on the bottom of the page.
+
+1. Edit the rule and change it to match the following values.
+
+    ![Input rule](./resources/aws_inbound_rule.png "Inbound rule")
 
 ## Connect Via PSQL ##
 
@@ -93,6 +105,6 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 
 ## Takehome Work
 
-1. Add another user to the database and log in using that user
+1. Add another user to the database and login using that user
 
 
