@@ -22,7 +22,7 @@
 
     This is because most types have native constraints.    
 
-1. Now lets see what the custom constraint does. Lets try a valid query
+1. Now let's see what the custom constraint does. Let's try a valid query
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (5);
 
@@ -36,7 +36,7 @@
 
     >ERROR:  new row for relation "test_check" violates check constraint "test_check_nope_check"
 
-1. This error doesn't tell us too much detail. What if we had multiple checks on the same table or even attribute. Lets Remove the old constraint.
+1. This error doesn't tell us too much detail. What if we had multiple checks on the same table or even attribute. Let's Remove the old constraint.
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK DROP CONSTRAINT TEST_CHECK_NOPE_CHECK;
 
@@ -48,7 +48,7 @@
 
     Notice the ADD/DROP CONSTRAINT. This is pretty consistent with other SQL conventions.    
 
-1. Now lets try adding a couple more test cases...
+1. Now let's try adding a couple more test cases...
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (-5);
 
@@ -57,7 +57,7 @@
     >ERROR:  new row for relation "test_check" violates check constraint "too_low"
     >DETAIL:  Failing row contains (-5).
 
-    Notice the `too_low`. Now lets try too high...
+    Notice the `too_low`. Now let's try too high...
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (15);
 
@@ -66,7 +66,7 @@
 
     Names are an extremely important part of writing maintainable code.
 
-1. Now lets add another attribute and create a NOT NULL constraint on that attribute.
+1. Now let's add another attribute and create a NOT NULL constraint on that attribute.
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK
         ADD COLUMN YUP SMALLINT NOT NULL;
@@ -84,7 +84,7 @@
     >    5
     >(1 row)
 
-    In the real world we would have to jump through a bunch of hoops to make this fit without losing data, however, since we are in a dev environment lets just blow the data away.
+    In the real world we would have to jump through a bunch of hoops to make this fit without losing data, however, since we are in a dev environment let's just blow the data away.
 
         DELETE FROM CONSTRAINTS.TEST_CHECK;
 
@@ -92,7 +92,7 @@
     
     Then try running it again, this time you should see `ALTER TABLE`
 
-1. Now lets try adding an both an invalid and a valid entry.
+1. Now let's try adding an both an invalid and a valid entry.
 
         INSERT INTO CONSTRAINTS.TEST_CHECK (NOPE) VALUES (5);
 
@@ -107,13 +107,13 @@
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK ADD CONSTRAINT MUST_BE_UNIQUE UNIQUE (NOPE, YUP);
 
-    Now lets try adding a second record with the same values
+    Now let's try adding a second record with the same values
     
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (5, 5);
 
     > ERROR:  duplicate key value violates unique constraint "must_be_unique"
     > DETAIL:  Key (nope, yup)=(5, 5) already exists.
 
-1. Since we are done with this lab lets clean up
+1. Since we are done with this lab let's clean up
 
         DROP SCHEMA IF EXISTS CONSTRAINTS CASCADE;

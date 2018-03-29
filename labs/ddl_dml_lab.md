@@ -1,20 +1,21 @@
 # Table Constraints #
-###### TODO: It might be good to add a 3rd table with a `NO ACTION` constraint ######
+###### TODO: It might be good to add a 3rd table with a `NO ACTION` constraint
 
 ## Introduction ##
 
-In this lab we will create a few tables and create *constraints*. These constraints do things like prevent duplication, makes sure values in all the tables are updated appropriatly and more. 
-
-## Terminal ##
+In this lab we will create a few tables and create *constraints*. These constraints do things like prevent duplication, makes sure values in all the tables are updated appropriately and more.
 
 ###### TODO: Load uuid function http://www.starkandwayne.com/blog/uuid-primary-keys-in-postgresql/ 
+1. To use UUIDs we need to add the pgcrypto extension with the following command.
 
-1. Reset the database using the following command from the root of the project<a name="reset-psql"></a>
+        create extension "pgcrypto";
+
+1. Reset the database using the following command from the root of the project.<a name="reset-psql"></a>
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
 
-2. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
-4. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a Person and Customer table with the following SQL(#tables-v1).
+2. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
+4. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
 
         CREATE TABLE MAIN.CUSTOMER(
             ID SERIAL PRIMARY KEY,
@@ -30,7 +31,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
         );
         
 
-5. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means lets try to add a user without a character. To do this run the following...
+5. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
 
         INSERT INTO PERSON VALUES ('John Doe', 'JohnDoe@cscc.edu', 1);
 
@@ -50,14 +51,14 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
 7. Run `SELECT * FROM CUSTOMER;` and take not of the ID field.    
     
-7. Now lets try that User insert again. To do this type the following in the terminal again...
+7. Now let's try that User insert again. To do this type the following in the terminal again...
 
         INSERT INTO PERSON VALUES ('John Dow', 'jd@gmail.com', <ID Value>);
 
     Notice this time everything completes and you see the following.
     > INSERT 0 1
 
-8. Now lets query the GAME_USER table and see what we have, paste the following select query...
+8. Now let's query the GAME_USER table and see what we have, paste the following select query...
 
         SELECT * FROM PERSON;
 
@@ -65,7 +66,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
         **TODO Show the result**
 
-9. Now lets see what **ON UPDATE CASCADE** means, lets say our user wants to change his character's name. To do this we would use the following query...
+9. Now let's see what **ON UPDATE CASCADE** means, let's say our user wants to change his character's name. To do this we would use the following query...
 
         UPDATE CUSTOMER
         SET ID=420
@@ -83,9 +84,9 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
         **TODO: Show output**
 
-    This is because the change was cascaded to the other table thanks to our contraint.
+    This is because the change was cascaded to the other table thanks to our contsraint.
 
-11.  Now lets explore the delete cascade. Our user has decided this game wasn't for him and deleted his Character. Notice when he deletes the Character with the following query...
+11.  Now let's explore the delete cascade. Our user has decided this game wasn't for him and deleted his Character. Notice when he deletes the Character with the following query...
 
         DELETE FROM CUSTOMER WHERE ID=420;
 
@@ -110,5 +111,3 @@ In this lab we will create a few tables and create *constraints*. These constrai
 ## References ##
 1. (Primary Key)[https://w3resource.com/PostgreSQL/primary-key-constraint.php]
 2. (Foriegn Key)[https://www.postgresql.org/docs/8.3/static/tutorial-fk.html]
-
-
