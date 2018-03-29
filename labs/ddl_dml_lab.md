@@ -5,7 +5,6 @@
 
 In this lab we will create a few tables and create *constraints*. These constraints do things like prevent duplication, makes sure values in all the tables are updated appropriately and more.
 
-###### TODO: Load uuid function http://www.starkandwayne.com/blog/uuid-primary-keys-in-postgresql/ 
 1. To use UUIDs we need to add the pgcrypto extension with the following command.
 
         create extension "pgcrypto";
@@ -14,8 +13,8 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
 
-2. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
-4. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
+1. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
 
         CREATE TABLE MAIN.CUSTOMER(
             ID SERIAL PRIMARY KEY,
@@ -31,17 +30,17 @@ In this lab we will create a few tables and create *constraints*. These constrai
         );
         
 
-5. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
+1. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
 
         INSERT INTO PERSON VALUES ('John Doe', 'JohnDoe@cscc.edu', 1);
 
-    This should produce the following error...
+    Notice the error, this is because there is no customer with the ID of 1.
 
-    ## TODO: Add the error
+    ![DDL DML](./resources/ddl_dml_1.png)
 
-6. To resolve this issue we need to add an Customer **before** adding the Person. To do this use the following SQL...
+1. To resolve this issue we need to add an Customer **before** adding the Person. To do this use the following SQL...
 
-        INSERT INTO CUSTOMER (DISCOUNT) VALUES (0);
+        INSERT INTO MAIN.CUSTOMER (DISCOUNT) VALUES (0);
 
     You should see the following...
 
@@ -49,26 +48,30 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
     1. Notice we are including the `(DISCOUNT)`, this is because the ID column is generated. So if we are leaving a property undefined we need to declare which properties we are actually setting, in this case that is just *DISCOUNT*. If we were to set both we could alternatively use `INSERT INTO CUSTOMER VALUES (101, 0);` when we want the ID to be *101*.
 
-7. Run `SELECT * FROM CUSTOMER;` and take not of the ID field.    
+1. Run `SELECT * FROM CUSTOMER;` and take not of the ID field.    
     
-7. Now let's try that User insert again. To do this type the following in the terminal again...
+1. Now let's try that User insert again. To do this type the following in the terminal again...
 
-        INSERT INTO PERSON VALUES ('John Dow', 'jd@gmail.com', <ID Value>);
+        INSERT INTO MAIN.PERSON VALUES ('John Dow', 'jd@gmail.com', <ID Value>);
 
     Notice this time everything completes and you see the following.
     > INSERT 0 1
 
-8. Now let's query the GAME_USER table and see what we have, paste the following select query...
+1. Now let's query the PERSON table and see what we have, paste the following select query...
 
-        SELECT * FROM PERSON;
+        SELECT * FROM MAIN.PERSON;
 
     Notice the item
 
-        **TODO Show the result**
+           name   |      email       | customer_id 
+        ----------+------------------+-------------
+         John Doe | JohnDoe@cscc.edu |           1
+        (1 row)
+
 
 9. Now let's see what **ON UPDATE CASCADE** means, let's say our user wants to change his character's name. To do this we would use the following query...
 
-        UPDATE CUSTOMER
+        UPDATE MAIN.CUSTOMER
         SET ID=420
         WHERE ID = <ID Value>;
 
@@ -78,11 +81,14 @@ In this lab we will create a few tables and create *constraints*. These constrai
 
 10.  Now notice we haven't updated `PERSON` at all but when we run
 
-        SELECT * FROM PERSON;
+        SELECT * FROM MAIN.PERSON;
 
     We see the new name...
 
-        **TODO: Show output**
+           name   |      email       | customer_id 
+        ----------+------------------+-------------
+         John Doe | JohnDoe@cscc.edu |         420
+         (1 row)
 
     This is because the change was cascaded to the other table thanks to our contsraint.
 
