@@ -19,7 +19,7 @@
 8. Input the password you created in the step above.
 9. Now you should see the following prompt.
 
-    ![postgres prompt](./labs/resources/lab1/postgres_prompt.png "Postgres Prompt")
+    ![postgres prompt](./resources/lab1/postgres_prompt.png "Postgres Prompt")
 
 10. Although Postgres is setup and working, we have not mapped some necessary properties to access the application through the command line. We will use this for functionality such as importing SQL scripts in later labs.
     1. Instruction for OSX
@@ -51,7 +51,7 @@
 
         You are now connected to database "postgres" as user "jgleason".
 
-14. Now let's quit by issuing the `\q` command        
+14. Now lets quit by issuing the `\q` command        
 
 ## Review ##
 

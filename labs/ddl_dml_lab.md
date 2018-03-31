@@ -5,15 +5,15 @@
 
 In this lab we will create a few tables and create *constraints*. These constraints do things like prevent duplication, makes sure values in all the tables are updated appropriately and more.
 
-1. To use UUIDs we need to add the pgcrypto extension with the following command.
-
-        create extension "pgcrypto";
-
 1. Reset the database using the following command from the root of the project.<a name="reset-psql"></a>
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
 
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
+1. To use UUIDs we need to add the pgcrypto extension with the following command.
+
+        create extension "pgcrypto";
+        
 1. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
 
         CREATE TABLE MAIN.CUSTOMER(

@@ -1,6 +1,6 @@
 # Lab 2: Connect to PostGres via Gui #
 
-1. Download and install [Sqlectron](https://sqlectron.github.io/).
+1. Download and install the GUI version of [Sqlectron](https://sqlectron.github.io/).
 2. Open the Sqlectron application.
 3. Select the add button at the top of the application.
 1. In the form inside the modal enter the following values.
