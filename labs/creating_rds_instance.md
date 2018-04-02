@@ -23,8 +23,7 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 1. Make sure that the micro instance type is selected. This will prevent from you accidently creating costly instances.
     ![Free Instance Type Selection](./resources/Free_Tier_Instance_Select.png "Free Instance Type Selection")
 1. There are a few other settings that need to be set before we can create an RDS instance.
-    ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")
-    (TODO: Auto list isn't working here)
+    ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")]
     2. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
         ![Oops Other Instance Settings](./resources/Free_Tier_Must_Be_Sub_20.png "Oops Other Instance Settings")  
     2. Make sure to take note of the *database name*, *main username*, and *password*  
