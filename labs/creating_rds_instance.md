@@ -25,7 +25,7 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 1. There are a few other settings that need to be set before we can create an RDS instance.
     ![Other instance settings](./resources/Free_Tier_Extra_Settings.png "Other instance settings")
     (TODO: Auto list isn't working here)
-    1. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
+    2. Be careful! Since we are using the free instances we are limited to 20GBs of space. AWS warns you about this, but please don't try anything fancy.
         ![Oops Other Instance Settings](./resources/Free_Tier_Must_Be_Sub_20.png "Oops Other Instance Settings")  
     2. Make sure to take note of the *database name*, *main username*, and *password*  
 10. Finally we need to configure our VPC settings. A VPC is essentially the same as using a subnet. It allows you to isolate your network environment from others. We will also create a security group, this will provide a policy to connect to the database.
