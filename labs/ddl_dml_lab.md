@@ -1,14 +1,12 @@
 # Table Constraints #
-###### TODO: It might be good to add a 3rd table with a `NO ACTION` constraint
-
 ## Introduction ##
 
 In this lab we will create a few tables and create *constraints*. These constraints do things like prevent duplication, makes sure values in all the tables are updated appropriately and more.
 
+## Lab ##
+
 1. Reset the database using the following command from the root of the project.<a name="reset-psql"></a>
-
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
-
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 1. To use UUIDs we need to add the pgcrypto extension with the following command.
 
@@ -29,7 +27,6 @@ In this lab we will create a few tables and create *constraints*. These constrai
             CONSTRAINT USER_KEY PRIMARY KEY (NAME, EMAIL)
         );
         
-
 1. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
 
         INSERT INTO PERSON VALUES ('John Doe', 'JohnDoe@cscc.edu', 1);
@@ -49,7 +46,6 @@ In this lab we will create a few tables and create *constraints*. These constrai
     1. Notice we are including the `(DISCOUNT)`, this is because the ID column is generated. So if we are leaving a property undefined we need to declare which properties we are actually setting, in this case that is just *DISCOUNT*. If we were to set both we could alternatively use `INSERT INTO CUSTOMER VALUES (101, 0);` when we want the ID to be *101*.
 
 1. Run `SELECT * FROM CUSTOMER;` and take not of the ID field.    
-    
 1. Now let's try that User insert again. To do this type the following in the terminal again...
 
         INSERT INTO MAIN.PERSON VALUES ('John Dow', 'jd@gmail.com', <ID Value>);
@@ -67,7 +63,6 @@ In this lab we will create a few tables and create *constraints*. These constrai
         ----------+------------------+-------------
          John Doe | JohnDoe@cscc.edu |           1
         (1 row)
-
 
 9. Now let's see what **ON UPDATE CASCADE** means, let's say our user wants to change his character's name. To do this we would use the following query...
 

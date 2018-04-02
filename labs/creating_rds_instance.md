@@ -39,21 +39,13 @@ AWS(Amazon Web Services) are a set of services otherwise known as a IaaS or [Paa
 
 1. By default AWS only allows access from 1 IP. What if you happen to be in the coffee shop or school and want to access RDS? To accomplish this we will be opening our RDS instance to public traffic.
 1. Search for and select VPC in AWS.
-
     ![VPC Search](./resources/AWS_VPC_SEARCH.png "VPC search")
-
 1. In the left hand menu, scroll down and select security group.
-
     ![Security Group](./resources/AWS_sec_grps.png "Security Group")
-
 1. Select the security group for your RDS instance (look for the port in the inbound rules).
-
     ![Security Group Selected](./resources/aws_rds_select_grp.png "RDS Security Group")
-
 1. Select inbound rules on the bottom of the page.
-
 1. Edit the rule and change it to match the following values.
-
     ![Input rule](./resources/aws_inbound_rule.png "Inbound rule")
 
 ## Connect Via PSQL ##
