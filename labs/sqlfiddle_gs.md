@@ -6,7 +6,7 @@ SQL Fiddle is a tool that allows for easily testing SQL. This tool is great for 
 
 ## Lab
 
-1. Go to [SQL Fiddle](http://sqlfiddle.com/)
+1. Go to [SQL Fiddle](http://www.sqlfiddle.com/)
 1. The site should look like this picture
 
     ![SQl Fiddle](./resources/sql_fiddle_1.png)
