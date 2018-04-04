@@ -3,7 +3,7 @@
 4. Type `\l` and make sure the new DB is listed.
 5. Type `\q` to quit psql and return to the terminal     
 6. Navigate to the folder in which the class git project was checked out.
-9. Import the Class dataset using psql with the following command `psql -U <username> -d coffeeshop -a -f labs\resources\sql\initialDb.sql`
+9. Import the Class dataset using psql with the following command `psql -U <username> -d coffeeshop -a -f labs\resources\sql\initialDb.sql`<a name="loading-initial-db"></a>
   a. `-U` This declares the username to use 
   b. `-d` This declares the database to use
   c. `-a` (TODO)
@@ -13,6 +13,7 @@
 
 10. When prompted enter your password
 11. Notice all of the queries running. These are exactly like the queries we ran in the last lab. You can take a look at them by opening the `.sql` file in a normal text editor.
+12. Run the query to insert the user data `psql -U <username> -d coffeeshop -a -f labs\resources\sql\FirstInsert.sql`<a href="loading-first"></a>
 12. Once completed connect to the database again using `psql -U <Username>`
 13. Connect to the database using `\c coffeeshop`
 14. Try querying the data using `select * from ADDRESS;`. If everything worked right you should see data
