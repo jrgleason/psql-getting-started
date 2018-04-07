@@ -25,4 +25,4 @@ This lab will focus on both Postgres declared functions, as well as those that w
             ON DELETE CASCADE
         );
         
-5. Now lets create our own function, 
+5. Now let's create our own function, 

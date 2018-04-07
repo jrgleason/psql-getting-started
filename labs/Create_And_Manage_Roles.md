@@ -35,3 +35,7 @@ This lab is meant to introduce the managing of access based on roles.
 1. Notice we see an error
 
 >ERROR:  permission denied for relation product
+
+## Review
+
+This shows us how we can limit the ability of users to access certain tables and certain permissions.

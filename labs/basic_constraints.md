@@ -1,11 +1,11 @@
 # Basic Constraints Lab
 
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
-1. Load the lab schema
+1. Load the lab schema with the following command...
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/basicConstraintsSetup.sql
 
-1. We will create the first table, this table shows us the `Check` Constraint
+1. We will create the first table, this table shows us the `Check` constraint.
 
         CREATE TABLE CONSTRAINTS.TEST_CHECK(
             NOPE SMALLINT,
@@ -103,7 +103,7 @@
 
     >INSERT 0 1
     
-1. finally we will look at the `UNIQUE` constraint. This constraint ensures that the value is only in the table once. 
+1. Finally we will look at the `UNIQUE` constraint. This constraint ensures that the value is only in the table once. 
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK ADD CONSTRAINT MUST_BE_UNIQUE UNIQUE (NOPE, YUP);
 
