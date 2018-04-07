@@ -1,4 +1,4 @@
-# Create function to calculate the average reciept
+# Create Function To Calculate Average Receipt
 
 ## Introduction
 
@@ -10,6 +10,7 @@ This lab will focus on both Postgres declared functions, as well as those that w
 2. Load the [first round of data](./CreateReciepts.md#first-insert)
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 2. Run the following query and take note of the response...
+
         WITH ORDERS AS (
             SELECT SUM(MAIN.TRANSACTION_PRODUCT.QUANTITY*MAIN.PRODUCT.CURRENT_ITEM_PRICE) AS ORDER_PRICE
                 FROM MAIN.TRANSACTION
@@ -38,4 +39,4 @@ This lab will focus on both Postgres declared functions, as well as those that w
           IMMUTABLE
           RETURNS NULL ON NULL INPUT; 
 
-1. Finally lets test is out with `SELECT MEAN_ORDER()``
+1. Finally lets test is out with `SELECT MEAN_ORDER()`
