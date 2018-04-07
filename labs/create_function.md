@@ -1,4 +1,4 @@
-# Using existing and creating new functions
+# Create function to calculate the average reciept
 
 ## Introduction
 
@@ -6,23 +6,36 @@ This lab will focus on both Postgres declared functions, as well as those that w
 
 ## Terminal
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
-2. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
-3. Take a look back at our [first attempt to create a customer](./ddl_dml_lab.md#connect-psql), we are going to improve on this
-4. First, because we deal with a lot of business a Serial would not be sustainable (there are only so many number!). Also if items are deleted it is difficult to keep track of IDs that can be reused. To get around this we will use a function provided by Postgres called `GEN_RANDOM_UUID`
+1. Load the [inital db](./loading_sample_data_lab.md#loading-initial-db)
+2. Load the [first round of data](./CreateReciepts.md#first-insert)
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
+2. Run the following query and take note of the response...
+        WITH ORDERS AS (
+            SELECT SUM(MAIN.TRANSACTION_PRODUCT.QUANTITY*MAIN.PRODUCT.CURRENT_ITEM_PRICE) AS ORDER_PRICE
+                FROM MAIN.TRANSACTION
+                INNER JOIN MAIN.TRANSACTION_PRODUCT
+                    ON MAIN.TRANSACTION_PRODUCT.TRANSACTION_ID =     MAIN.TRANSACTION.ID 
+                INNER JOIN MAIN.PRODUCT 
+                ON MAIN.PRODUCT.ID = MAIN.TRANSACTION_PRODUCT.PRODUCT_ID 
+            GROUP BY MAIN.TRANSACTION.ID
+        )
+        SELECT AVG(ORDER_PRICE) FROM ORDERS;
 
-    a. Run the following SQL command
+1. Now lets create a function to calculate the average of these transactions...
 
-        CREATE TABLE MAIN.CUSTOMER(
-            ID UUID NOT NULL PRIMARY KEY DEFAULT GEN_RANDOM_UUID(),
-            DISCOUNT INT
-        );
-        CREATE TABLE MAIN.PERSON(
-            ID UUID NOT NULL PRIMARY KEY DEFAULT GEN_RANDOM_UUID(),
-            NAME VARCHAR(20) NOT NULL,
-            EMAIL VARCHAR(20) NOT NULL,
-            CUSTOMER_ID INT REFERENCES MAIN.CUSTOMER(ID)
-            ON UPDATE CASCADE
-            ON DELETE CASCADE
-        );
-        
-5. Now let's create our own function, 
+        CREATE FUNCTION MEAN_ORDER() RETURNS NUMERIC
+          AS 'WITH ORDERS (ORDER_PRICE) as (
+            SELECT SUM(MAIN.TRANSACTION_PRODUCT.QUANTITY*MAIN.PRODUCT.CURRENT_ITEM_PRICE) AS ORDER_PRICE
+                FROM MAIN.TRANSACTION
+                INNER JOIN MAIN.TRANSACTION_PRODUCT
+                ON MAIN.TRANSACTION_PRODUCT.TRANSACTION_ID = MAIN.TRANSACTION.ID 
+                INNER JOIN MAIN.PRODUCT 
+                ON MAIN.PRODUCT.ID = MAIN.TRANSACTION_PRODUCT.PRODUCT_ID 
+            GROUP BY MAIN.TRANSACTION.ID
+          )
+          SELECT AVG(ORDER_PRICE) FROM ORDERS'
+          LANGUAGE SQL
+          IMMUTABLE
+          RETURNS NULL ON NULL INPUT; 
+
+1. Finally lets test is out with `SELECT MEAN_ORDER()``
