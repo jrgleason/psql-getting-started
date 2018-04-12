@@ -12,23 +12,23 @@
             CHECK (NOPE > 0)
         );
 
-1. By default types have some limitations. We can see that by trying to add too big of an integer 
+1. By default types have some limitations. We can see that by trying to add too big of an integer.
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (5000000000000);
 
-    Notice we see
+    Notice we see...
 
     >ERROR:  smallint out of range
 
     This is because most types have native constraints.    
 
-1. Now let's see what the custom constraint does. Let's try a valid query
+1. Now let's see what the custom constraint does. Let's try a valid query...
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (5);
 
-    Notice we see a valid transaction `INSERT 0 1`
+    Notice we see a valid transaction `INSERT 0 1`.
 
-1. What happens if we try to add an invalid record
+1. What happens if we try to add an invalid record...
 
         INSERT INTO CONSTRAINTS.TEST_CHECK VALUES (-5);
 
@@ -36,11 +36,11 @@
 
     >ERROR:  new row for relation "test_check" violates check constraint "test_check_nope_check"
 
-1. This error doesn't tell us too much detail. What if we had multiple checks on the same table or even attribute. Let's Remove the old constraint.
+1. This error doesn't tell us too much detail. What if we had multiple checks on the same table or even attribute. Let's Remove the old constraint...
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK DROP CONSTRAINT TEST_CHECK_NOPE_CHECK;
 
-    And add a couple new ones that have better names    
+    And add a couple new ones that have better names...
 
         ALTER TABLE CONSTRAINTS.TEST_CHECK 
         ADD CONSTRAINT TOO_LOW CHECK (NOPE > 0),

@@ -9,7 +9,7 @@ This lab requires 2 Windows, from here out those will be refered to as Window 1 
 2. Connect to the chinook db `\c chinook`
 3. Type `BEGIN;`
 4. Enter the following query `INSERT INTO TOUR (TOURNAME, ARTISTID) VALUES ('Buddy's Other Tour', 15);`
-5. Now lets see the record we added with the following query `SELECT * FROM TOUR WHERE ARTISTID = 15;` Notice we see the record
+5. Now let's see the record we added with the following query `SELECT * FROM TOUR WHERE ARTISTID = 15;` Notice we see the record
 
         chinook=# select * from TOUR WHERE ARTISTID = 15;
          tourid |               tourname               | artistid | albumid 
@@ -27,7 +27,7 @@ This lab requires 2 Windows, from here out those will be refered to as Window 1 
               1 | Buddy Guy: Institutional Genius Tour |       15 |        
         (1 row)
 
-8. Now lets commit, in the first terminal type `COMMIT;`
+8. Now let's commit, in the first terminal type `COMMIT;`
 9. In the second terminal try the query again, notice the record now appears...
 
         chinook=# select * from TOUR WHERE ARTISTID = 15;

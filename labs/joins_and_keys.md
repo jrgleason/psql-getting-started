@@ -31,7 +31,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
 
     This means you could also use `NOT NULL UNIQUE` instead.
 
-4. Now lets insert an ADDRESS `INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('400 W. Broad St Columbus, OH 43217');` 
+4. Now let's insert an ADDRESS `INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('400 W. Broad St Columbus, OH 43217');` 
     
     a. Notice that if you try to add an Address with a null ID it fails thanks to the constraint.
 
@@ -41,7 +41,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
 
       this is due to the PRIMARY KEY constraint.
 
-5. We can also look at what is called a *constraint*. Lets create the **PERSON** table.
+5. We can also look at what is called a *constraint*. let's create the **PERSON** table.
 
         CREATE TABLE MAIN.PERSON(
           ID SERIAL PRIMARY KEY,
@@ -55,7 +55,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
     a. The first constraint is a *foreign key relationship*. This is when a table requires an entry in another table. For this example we will use the concept of a **Person**. In our world a person **_MUST_** have an adress so we add the following `ADDRESS_ID SERIAL NOT NULL REFERENCES MAIN.ADDRESS(ID)`.   
     b. The other constraint is a RegEx pattern used to make sure the email address is correct. I am just going to gloss over that for now. 
 
-6. Lets try to add a Person with an invalid Address ID. `INSERT INTO MAIN.PERSON (NAME,PHONE,EMAIL,ADDRESS_ID) VALUES ('John Doe','6142145417','a@b.com','420');` 
+6. let's try to add a Person with an invalid Address ID. `INSERT INTO MAIN.PERSON (NAME,PHONE,EMAIL,ADDRESS_ID) VALUES ('John Doe','6142145417','a@b.com','420');` 
 Notice we get an error
 
         ERROR:  insert or update on table "person" violates foreign key constraint "person_address_id_fkey"
@@ -65,7 +65,7 @@ Notice we get an error
 
 7. The ID of the Address created in step 1 was auto generated and not returned so the easiest way to handle this is to select the record from the table. In our case this is super easy because it is the only one. We just use `SELECT * FROM MAIN.ADDRESS;`. It should always be 1 because of the serial, unless you made a mistake somewhere. 
 8. Now we need to use that ID to add a Person who uses that ID. `INSERT INTO MAIN.PERSON (NAME,PHONE,EMAIL,ADDRESS_ID) VALUES ('John Doe','6142145417','a@b.com','1');`
-8. Now lets say our users wants a list of all user names and their address. This is where we would use a *Join* to join the tables
+8. Now let's say our users wants a list of all user names and their address. This is where we would use a *Join* to join the tables
 
         SELECT 
           MAIN.PERSON.NAME,
@@ -80,7 +80,7 @@ Notice we get an error
      John Doe | 400 W. Broad Columbus, OH 43217
     (1 row)
 
-10. Next we will explore how to deal with other types of joins. To start this lets make a **Store** relation that has an address and can also reference a manager. In our world a Manager will be optional and our store doesn't have one.
+10. Next we will explore how to deal with other types of joins. To start this let's make a **Store** relation that has an address and can also reference a manager. In our world a Manager will be optional and our store doesn't have one.
 
         CREATE TABLE MAIN.STORE(
           ID SERIAL PRIMARY KEY,
@@ -89,7 +89,7 @@ Notice we get an error
           ADDRESS_ID INTEGER REFERENCES MAIN.ADDRESS(ID)
         );
 
-11 Now lets add a couple store addresses...
+11 Now let's add a couple store addresses...
 
         INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('420 Hubbard Ave Columbus, OH 43201');  
         INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('240 North Fourth Street Columbus, OH 43201');       

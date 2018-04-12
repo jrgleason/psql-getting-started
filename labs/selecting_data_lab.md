@@ -16,7 +16,7 @@
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/selectData.sql
             
 3. Connect to [the RDS instance and the coffeeshop db](./creating_rds_instance.md#connect-psql)
-2. Now lets start with a basic select query to return *ALL* addresses `SELECT * FROM MAIN.ADDRESS;`.
+2. Now let's start with a basic select query to return *ALL* addresses `SELECT * FROM MAIN.ADDRESS;`.
     
     We should see a list of addresses like this...
     
@@ -41,7 +41,7 @@
         ![Select top 5](./resources/postgres_select_top_5.png "Select top 5")
         *It is important to notice that although these items seem to almost be in alabetical order, this is not garunteed without sorting in the query. We will talk more about this later.*
 
-4. But wait he wants the *last* 5 artists when sorting by name. To do this lets take 2 steps, first we will provide SQL with the info it needs to sort and second we will sort descending to make sure the later letters come first.
+4. But wait he wants the *last* 5 artists when sorting by name. To do this let's take 2 steps, first we will provide SQL with the info it needs to sort and second we will sort descending to make sure the later letters come first.
 
         SELECT * 
         FROM "ADDRESS"

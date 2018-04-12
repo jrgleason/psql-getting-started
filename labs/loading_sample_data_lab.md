@@ -1,7 +1,9 @@
 # Loading a SQL file #
 1. Connect to [the RDS instance and the coffeeshop db](./creating_rds_instance.md#connect-psql)
+1. To use UUIDs we need to add the pgcrypto extension with the following command.
+        create extension "pgcrypto";   
 4. Type `\l` and make sure the new DB is listed.
-5. Type `\q` to quit psql and return to the terminal     
+5. Type `\q` to quit psql and return to the terminal    
 6. Navigate to the folder in which the class git project was checked out.
 9. Import the Class dataset using psql with the following command `psql -U <username> -d coffeeshop -a -f labs\resources\sql\initialDb.sql`<a name="loading-initial-db"></a>
   a. `-U` This declares the username to use 
