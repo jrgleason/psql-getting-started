@@ -8,7 +8,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
 1. Reset the database using the following command from the root of the project.<a name="reset-psql"></a>
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
-            
+
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 1. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
 
@@ -108,5 +108,5 @@ In this lab we will create a few tables and create *constraints*. These constrai
 1. Create schema for tables to track a user's transactions and also their favorite items.
 
 ## References ##
-1. (Primary Key)[https://w3resource.com/PostgreSQL/primary-key-constraint.php]
-2. (Foriegn Key)[https://www.postgresql.org/docs/8.3/static/tutorial-fk.html]
+1. [Primary Key](https://w3resource.com/PostgreSQL/primary-key-constraint.php)
+2. [Foriegn Key](https://www.postgresql.org/docs/8.3/static/tutorial-fk.html)
