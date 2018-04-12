@@ -1,9 +1,5 @@
 # Selecting Data Lab #
 
-## Introduction ##
-
-###### TODO ######
-
 ## Terminal ##
 
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
@@ -17,29 +13,26 @@
             
 3. Connect to [the RDS instance and the coffeeshop db](./creating_rds_instance.md#connect-psql)
 2. Now let's start with a basic select query to return *ALL* addresses `SELECT * FROM MAIN.ADDRESS;`.
-    
-    We should see a list of addresses like this...
-    
-    
 
-
+We should see a list of addresses like this...
+![Select result](./resources/selectLab_select.png "Select result")
 3. That was great but WAY too much information. Now our boss wants only the first 5 addresses.
  
-    A. The first way to do this is to use the `LIMIT` keyword like this
+    2. The first way to do this is to use the `LIMIT` keyword like this
   
             SELECT * FROM "MAIN.ADDRESS"
             LIMIT 5;
   
-    B. A similar way to handle this (if using a SQL:2008 v8.4) is to use the `FETCH FIRST N ROWS ONLY` keywords. 
+    2. A similar way to handle this (if using a SQL:2008 v8.4) is to use the `FETCH FIRST N ROWS ONLY` keywords. 
   
             SELECT * FROM "MAIN.ADDRESS"
             FETCH FIRST 5 ROWS ONLY;
   
-    C. Some DBMSs support the `TOP` keyword like in the following the following query `SELECT TOP 5 * FROM "Artist";`. However, this is not a real part of the SQL spec and doesn't work in PostGres.
+    2. Some DBMSs support the `TOP` keyword like in the following the following query `SELECT TOP 5 * FROM "Artist";`. However, this is not a real part of the SQL spec and doesn't work in PostGres.
 
-        No matter which way we do this we should see the following result
+    No matter which way we do this we should see the following result
         ![Select top 5](./resources/postgres_select_top_5.png "Select top 5")
-        *It is important to notice that although these items seem to almost be in alabetical order, this is not garunteed without sorting in the query. We will talk more about this later.*
+    *It is important to notice that although these items seem to almost be in alabetical order, this is not garunteed without sorting in the query. We will talk more about this later.*
 
 4. But wait he wants the *last* 5 artists when sorting by name. To do this let's take 2 steps, first we will provide SQL with the info it needs to sort and second we will sort descending to make sure the later letters come first.
 
@@ -56,18 +49,5 @@
         FROM "Artist"
         ORDER BY "Name" DESC
         LIMIT 5;
-
-6. ###### TODO ###### We need to talk about where
-
-
-## GUI ##
-
-###### TODO ######
-
-## Review ##
-
-###### TODO ######
-
-## Extra Credit ##
 
 ###### TODO ######
