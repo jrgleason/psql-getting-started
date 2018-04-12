@@ -86,7 +86,7 @@
 
 4. You should now see the table listed on the left nav
 
-    ![sqlectron table created](https://jrgleason.github.io/psql-getting-started/labs/resources/sqlectron_table_created.png "sqlectron table created")
+    ![sqlectron table created](./resources/sqlectron_table_created.png "sqlectron table created")
 
     Notice that instead of `address` it shows `main.address`. The main represents the schema of the table.
 
@@ -98,7 +98,7 @@
 
 7. Now let's try querying it again. Again type in `SELECT * FROM MAIN.ADDRESS;` and hit execute. You should now see a result.
 
-    ![sqlectron with data](https://jrgleason.github.io/psql-getting-started/labs/resources/sqlectron_record_shown_3 "")
+    ![sqlectron with data](./resources/sqlectron_record_shown_3.png "")
 
 8. Ok now that we have everything in there let's learn how to clean up. First enter the following query in the text area to delete the record we just created `DELETE FROM MAIN.ADDRESS;`. This removes all records from the ADDRESS table, if we wanted to we could be more specific with `DELETE FROM MAIN.ADDRESS WHERE ADDRESS_LINE1 = '400 W. Broad St Columbus, OH 43217';`. Either way you should see this message...
 
