@@ -9,7 +9,7 @@
 
 2. Add the sample data using the following command from the root of the project
 
-        psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/selectData.sql
+        psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/FirstInsert.sql
             
 3. Connect to [the RDS instance and the coffeeshop db](./creating_rds_instance.md#connect-psql)
 2. Now let's start with a basic select query to return *ALL* addresses `SELECT * FROM MAIN.ADDRESS;`.
