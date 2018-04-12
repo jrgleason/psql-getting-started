@@ -6,7 +6,9 @@ In this lab we will create a few tables and create *constraints*. These constrai
 ## Lab ##
 
 1. Reset the database using the following command from the root of the project.<a name="reset-psql"></a>
+
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
+            
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 1. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
 
@@ -22,7 +24,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
           ON DELETE CASCADE,
           CONSTRAINT USER_KEY PRIMARY KEY (NAME, EMAIL)
         );
-        
+
 1. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
 
         INSERT INTO PERSON VALUES ('John Doe', 'JohnDoe@cscc.edu', 1);
