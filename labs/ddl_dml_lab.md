@@ -15,13 +15,14 @@ In this lab we will create a few tables and create *constraints*. These constrai
             DISCOUNT INT
         );
         CREATE TABLE MAIN.PERSON(
-            NAME VARCHAR(20) NOT NULL,
-            EMAIL VARCHAR(20) NOT NULL,
-            CUSTOMER_ID INT REFERENCES MAIN.CUSTOMER(ID)
-            ON UPDATE CASCADE
-            ON DELETE CASCADE,
-            CONSTRAINT USER_KEY PRIMARY KEY (NAME, EMAIL)
+          NAME VARCHAR(20) NOT NULL,
+          EMAIL VARCHAR(20) NOT NULL,
+          CUSTOMER_ID INT REFERENCES MAIN.CUSTOMER(ID)
+          ON UPDATE CASCADE
+          ON DELETE CASCADE,
+          CONSTRAINT USER_KEY PRIMARY KEY (NAME, EMAIL)
         );
+        
 1. We now have a relationship between the Customer relation and the Person relation. To demonstrate what this means let's try to add a user without a character. To do this run the following...
 
         INSERT INTO PERSON VALUES ('John Doe', 'JohnDoe@cscc.edu', 1);
