@@ -2,10 +2,11 @@
 
 ## Terminal ##
 
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. To use UUIDs we need to add the pgcrypto extension with the following command.
 
          create extension "pgcrypto";
-
+1. Quit PSQL with `\q`
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
 2. Initialize the full DB
 
