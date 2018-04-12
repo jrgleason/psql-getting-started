@@ -9,6 +9,7 @@ In this lab we will create a few tables and create *constraints*. These constrai
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/resetdb.sql
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 1. We would like to track people and provide them with the ability to become a customer which provides incentives such as discounts. To do this we start by creating a `Person` and `Customer` table with the following SQL(#tables-v1).
+
         CREATE TABLE MAIN.CUSTOMER(
             ID SERIAL PRIMARY KEY,
             DISCOUNT INT

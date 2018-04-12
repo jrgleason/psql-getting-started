@@ -36,7 +36,7 @@
 
         INSERT INTO MAIN.ADDRESS VALUES ('400 W. Broad St Columbus, OH 43217');
 
-    a. In PostGres `"` is different than `'`. Please make sure to use `'` when defining strings. This is similar in some other environments such as Microsoft SQLServer.
+    1. In PostGres `"` is different than `'`. Please make sure to use `'` when defining strings. This is similar in some other environments such as Microsoft SQLServer.
 
 9. Now let's try querying the table again
 
