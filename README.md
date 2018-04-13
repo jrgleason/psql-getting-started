@@ -19,7 +19,7 @@ This repository houses the couse material for the basic SQL class offered by Col
 1. In the terminal type `git clone https://bitbucket.org/jgleason/cbus-state-sql`
 2. cd into that directory `cd ./cbus-state-sql`
 
-### To generate HTML files ###
+### <span style="color:green">To generate HTML files</span> ###
 
 1. make sure node v9+ is installed  
 2. `cd ./scripts`
