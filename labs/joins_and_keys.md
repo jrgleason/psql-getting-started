@@ -132,7 +132,7 @@ Notice we get an error
         Store 1 | 420 Hubbard Ave Columbus, OH 43201
         (1 row)
 
-## Takehome Work
+## Takehome Work 
 
 1. What are the disadvantages to using `SERIAL` for IDs? Is there a better way? 
 2. What is the difference between a *LEFT* Outer Join and a *RIGHT* Outer join?
