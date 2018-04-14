@@ -33,7 +33,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
 
 4. Now let's insert an ADDRESS `INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('400 W. Broad St Columbus, OH 43217');` 
     
-    a. Notice that if you try to add an Address with a null ID it fails thanks to the constraint.
+    1. Notice that if you try to add an Address with a null ID it fails thanks to the constraint.
 
         INSERT INTO MAIN.ADDRESS (ID, ADDRESS_LINE1) VALUES (null, '400 W. Broad St Columbus, OH 43217');
         ERROR:  null value in column "id" violates not-null constraint
@@ -52,8 +52,8 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
           CONSTRAINT EMAIL_CHECK CHECK (EMAIL ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
         );
         
-    a. The first constraint is a *foreign key relationship*. This is when a table requires an entry in another table. For this example we will use the concept of a **Person**. In our world a person **_MUST_** have an adress so we add the following `ADDRESS_ID SERIAL NOT NULL REFERENCES MAIN.ADDRESS(ID)`.   
-    b. The other constraint is a RegEx pattern used to make sure the email address is correct. I am just going to gloss over that for now. 
+    1. The first constraint is a *foreign key relationship*. This is when a table requires an entry in another table. For this example we will use the concept of a **Person**. In our world a person **_MUST_** have an adress so we add the following `ADDRESS_ID SERIAL NOT NULL REFERENCES MAIN.ADDRESS(ID)`.   
+    1. The other constraint is a RegEx pattern used to make sure the email address is correct. I am just going to gloss over that for now. 
 
 6. let's try to add a Person with an invalid Address ID. `INSERT INTO MAIN.PERSON (NAME,PHONE,EMAIL,ADDRESS_ID) VALUES ('John Doe','6142145417','a@b.com','420');` 
 Notice we get an error

@@ -1,10 +1,12 @@
 # Basic Constraints Lab
 
-1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
+1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
+
 1. Load the lab schema with the following command...
 
         psql -h <AWS_URL> -p <PORT> -U <USER_NAME> <DB_NAME> -a -f ./labs/resources/sql/basicConstraintsSetup.sql
 
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. We will create the first table, this table shows us the `Check` constraint.
 
         CREATE TABLE CONSTRAINTS.TEST_CHECK(
