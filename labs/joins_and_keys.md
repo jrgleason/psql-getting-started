@@ -1,6 +1,6 @@
 # Joins and Keys Lab #
 
-## Introdution ##
+## Introduction ##
 
 This lab is meant to introduce you to Keys, Joins and Constraints.
 
@@ -52,7 +52,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
           CONSTRAINT EMAIL_CHECK CHECK (EMAIL ~* '^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+[.][A-Za-z]+$')
         );
         
-    1. The first constraint is a *foreign key relationship*. This is when a table requires an entry in another table. For this example we will use the concept of a **Person**. In our world a person **_MUST_** have an adress so we add the following `ADDRESS_ID SERIAL NOT NULL REFERENCES MAIN.ADDRESS(ID)`.   
+    1. The first constraint is a *foreign key relationship*. This is when a table requires an entry in another table. For this example we will use the concept of a **Person**. In our world a person **_MUST_** have an address so we add the following `ADDRESS_ID SERIAL NOT NULL REFERENCES MAIN.ADDRESS(ID)`.   
     1. The other constraint is a RegEx pattern used to make sure the email address is correct. I am just going to gloss over that for now. 
 
 6. let's try to add a Person with an invalid Address ID. `INSERT INTO MAIN.PERSON (NAME,PHONE,EMAIL,ADDRESS_ID) VALUES ('John Doe','6142145417','a@b.com','420');` 
@@ -136,7 +136,7 @@ Notice we get an error
 
 1. What are the disadvantages to using `SERIAL` for IDs? Is there a better way? 
 2. What is the difference between a *LEFT* Outer Join and a *RIGHT* Outer join?
-3. Create a constraint that ensures there are no special charecters in a person's name. 
+3. Create a constraint that ensures there are no special characters in a person's name. 
 4. Create a schema of tables that can be used to track Customer transaction by store.
 5. Create a way to store the user's favorite store.
 6. How would we handle multiple locations either nearby or at the same address.

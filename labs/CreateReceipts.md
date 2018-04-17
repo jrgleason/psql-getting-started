@@ -1,4 +1,4 @@
-# Create Reciepts
+# Create Receipts
 
 ## Introduction
 
@@ -6,7 +6,7 @@ As an accountant you need to provide a list of transactions organized by custome
 
 ## Lab
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
-1. Load the [inital db](./loading_sample_data_lab.md#loading-initial-db)
+1. Load the [initial db](./loading_sample_data_lab.md#loading-initial-db)
 1. Load the FirstInsert script<a name="first-insert"></a>...
 
         psql -h <url> -p 5432 -U <username> <db name> -a -f ./labs/resources/sql/FirstInsert.sql 
@@ -41,7 +41,7 @@ As an accountant you need to provide a list of transactions organized by custome
     
     This is because these are the only 2 with customer profiles.
 
-1. Now lets finish wiring everything up...
+1. Now let's finish wiring everything up...
 
         SELECT MAIN.TRANSACTION.ID, MAIN.PERSON.NAME, SUM(MAIN.TRANSACTION_PRODUCT.QUANTITY*MAIN.PRODUCT.CURRENT_ITEM_PRICE)
         FROM MAIN.TRANSACTION
@@ -62,4 +62,4 @@ As an accountant you need to provide a list of transactions organized by custome
 
 ## Takehome
 
-Can you now create itemized reciepts?              
+Can you now create itemized receipts?              

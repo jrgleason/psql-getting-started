@@ -77,7 +77,7 @@
     
     >ERROR:  column "yup" contains null values
 
-    Thats because of the leftover value in the table, we can see this by issuing a select query.
+    That's because of the leftover value in the table, we can see this by issuing a select query.
 
         SELECT * FROM CONSTRAINTS.TEST_CHECK;
 
@@ -94,7 +94,7 @@
     
     Then try running it again, this time you should see `ALTER TABLE`
 
-1. Now let's try adding an both an invalid and a valid entry.
+1. Now let's try adding a both an invalid and a valid entry.
 
         INSERT INTO CONSTRAINTS.TEST_CHECK (NOPE) VALUES (5);
 
