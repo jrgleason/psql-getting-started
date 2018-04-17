@@ -16,14 +16,7 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
 
     You should see the following when you type `\d+ MAIN.ADDRESS`
 
-                                                              Table "main.address"
-        Column     |          Type          |                         Modifiers                         | Storage  | Stats target | Description 
-    ---------------+------------------------+-----------------------------------------------------------+----------+--------------+-------------
-     id            | integer                | not null default nextval('main.address_id_seq'::regclass) | plain    |              | 
-     address_line1 | character varying(100) | not null                                                  | extended |              | 
-    Indexes:
-        "address_pkey" PRIMARY KEY, btree (id)
-
+    ![Show main address](./resources/join_address view.png "show main address")
 
     Notice that according to the [documentation](https://www.postgresql.org/docs/8.1/static/ddl-constraints.html).
 
