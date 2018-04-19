@@ -83,17 +83,17 @@ Notice we get an error
           ADDRESS_ID INTEGER REFERENCES MAIN.ADDRESS(ID)
         );
 
-11. Now let's add a couple store addresses
+1. Now let's add a couple store addresses
 
         INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('420 Hubbard Ave Columbus, OH 43201');          
         INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('240 North Fourth Street Columbus, OH 43201');       
 
-12. Now we can assign the first Address to the store, remember to double check the serial of the record you are using.
+1. Now we can assign the first Address to the store, remember to double check the serial of the record you are using.
 
         INSERT INTO MAIN.STORE (NAME, MANAGER_ID, ADDRESS_ID) VALUES ('Store 1', 2, 2);
         INSERT INTO MAIN.STORE (NAME, MANAGER_ID, ADDRESS_ID) VALUES ('Store 2', 2, null);
 
-10. To get all of the stores regardless of whether they are associated with a person. To do this we use a `LEFT OUTER JOIN`. This returns all records from the left side of the join, even if there is no right side record. If we try again like this...
+1. To get all of the stores regardless of whether they are associated with a person. To do this we use a `LEFT OUTER JOIN`. This returns all records from the left side of the join, even if there is no right side record. If we try again like this...
 
         SELECT 
           MAIN.STORE.NAME,
@@ -111,7 +111,7 @@ Notice we get an error
     
     Notice that Store 2 shows up, even though there is no address.
 
-11. If we only wanted stores that had addresses we can use an *Inner* join instead of an *Outer* join.
+1. If we only wanted stores that had addresses we can use an *Inner* join instead of an *Outer* join.
 
         SELECT 
           MAIN.STORE.NAME,
