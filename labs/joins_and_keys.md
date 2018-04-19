@@ -28,9 +28,10 @@ This lab is meant to introduce you to Keys, Joins and Constraints.
     
     1. Notice that if you try to add an Address with a null ID it fails thanks to the constraint.
 
-        INSERT INTO MAIN.ADDRESS (ID, ADDRESS_LINE1) VALUES (null, '400 W. Broad St Columbus, OH 43217');
-        ERROR:  null value in column "id" violates not-null constraint
-        DETAIL:  Failing row contains (null, 400 W. Broad St Columbus, OH 43217).
+             INSERT INTO MAIN.ADDRESS (ID, ADDRESS_LINE1) VALUES (null, '400 W. Broad St Columbus, OH 43217');
+        
+             ERROR:  null value in column "id" violates not-null constraint
+             DETAIL:  Failing row contains (null, 400 W. Broad St Columbus, OH 43217).
 
       this is due to the PRIMARY KEY constraint.
 
