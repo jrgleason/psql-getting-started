@@ -83,7 +83,11 @@ Notice we get an error
           ADDRESS_ID INTEGER REFERENCES MAIN.ADDRESS(ID)
         );
 
-11 Now let's add a couple store addresses...      
+11. Now let's add a couple store addresses
+
+        INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('420 Hubbard Ave Columbus, OH 43201');          
+        INSERT INTO MAIN.ADDRESS (ADDRESS_LINE1) VALUES ('240 North Fourth Street Columbus, OH 43201');       
+
 12. Now we can assign the first Address to the store, remember to double check the serial of the record you are using.
 
         INSERT INTO MAIN.STORE (NAME, MANAGER_ID, ADDRESS_ID) VALUES ('Store 1', 2, 2);
