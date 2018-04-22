@@ -64,4 +64,17 @@
           3023
         (1 row)
 
-        
+1. **Question** Find all Countries with at least 100 cities on the list. The output should look like this...
+
+                name        | count 
+        --------------------+-------
+         Russian Federation |   189
+         Brazil             |   250
+         Mexico             |   173
+         India              |   341
+         Philippines        |   136
+         Japan              |   248
+         United States      |   274
+         China              |   363
+        (8 rows)
+
