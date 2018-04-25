@@ -3,7 +3,7 @@
 # Lab
 
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
-1. Load the [inital db](./loading_sample_data_lab.md#loading-initial-db)
+1. Load the [initial db](./loading_sample_data_lab.md#loading-initial-db)
 1. Load the [first round of data](./CreateReciepts.md#first-insert)
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. Our boss wants us to create a table of Columbus residents. We know this is overkill because we have that data and our awesome teacher told us about the concept of views. So we create the following view... 
