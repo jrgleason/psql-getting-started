@@ -3,7 +3,7 @@
 ## Lab
 
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
-1. Load the [inital db](./loading_sample_data_lab.md#loading-initial-db)
+1. Load the [initial db](./loading_sample_data_lab.md#loading-initial-db)
 1. Load the [first round of data](./CreateReciepts.md#first-insert)
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. We will now be add a Transaction_State attribute (column) to our Transaction relation (table). This attribute should be of a custom type with the possible values of `pending` and `closed`. Lets start by creating a Transaction_State `enumerated` type...

@@ -13,7 +13,7 @@
         SELECT * FROM WORLD.CITY WHERE NAME LIKE 'J%';
 
     Notice the `'J%'` this is telling us that we are looking for records with J and then any number of letters (characters) after that J.
-1. **Question**: Now let's calculate the number of cities that begin with `J`. The ouput should look like this...
+1. **Question**: Now let's calculate the number of cities that begin with `J`. The output should look like this...
 
          count 
         -------
