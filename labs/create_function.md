@@ -7,7 +7,7 @@ This lab will focus on both Postgres declared functions, as well as those that w
 ## Terminal
 1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
 1. Load the [initial db](./loading_sample_data_lab.md#loading-initial-db)
-2. Load the [first round of data](./CreateReciepts.md#first-insert)
+2. Load the [first round of data](./CreateReceipts#first-insert)
 1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql).
 2. Run the following query and take note of the response...
 
