@@ -2,7 +2,7 @@
 
 ## Lab
 
-1. Connect to RDS // TODO: Add link
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. Create the following tables
 
         CREATE TABLE OUR_ACCOUNT (AMOUNT INTEGER);
