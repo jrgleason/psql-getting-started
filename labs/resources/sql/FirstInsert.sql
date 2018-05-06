@@ -144,6 +144,30 @@ BARISTA_1 AS(
     RETURNING ID AS ID    
 ),
 -- CUSTOMER
+WILL_SMITH_ADDRESS AS(
+    INSERT INTO MAIN.ADDRESS (
+      ADDRESS_LINE1, 
+      CITY, 
+      STATE, 
+      ZIP
+    ) 
+    VALUES (
+      '12 Main St', 
+      'Nowhereville', 
+      'OH', 
+      '35465'
+    )
+    RETURNING ID AS ID
+),
+WILL_SMITH AS(
+    INSERT INTO MAIN.PERSON (NAME, PHONE, EMAIL, ADDRESS_ID)
+    SELECT 'Will Smith',
+           '13334345545',
+           'bjones@gmail.com', 
+           ID
+    FROM WILL_SMITH_ADDRESS        
+    RETURNING ID AS ID
+),
 BILL_JONES_ADDRESS AS(
     INSERT INTO MAIN.ADDRESS (
       ADDRESS_LINE1, 
