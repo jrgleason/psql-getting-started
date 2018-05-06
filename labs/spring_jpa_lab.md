@@ -56,4 +56,61 @@
             }
         }
 
-1.
+1. Now Let's create the repo `src\main\java\org\gleason\coffeeshop\repo\PersonRepo.java`
+
+        package org.gleason.coffeeshop.repo;
+        import org.gleason.coffeeshop.domain.Person;
+        import org.springframework.data.repository.CrudRepository;
+        public interface PersonRepo extends CrudRepository<Person, String> { }
+
+1. Next  the service `src\main\java\org\gleason\coffeeshop\service\CoffeeShopService.java`
+
+        package org.gleason.coffeeshop.service;
+        
+        import org.gleason.coffeeshop.domain.Person;
+        import org.gleason.coffeeshop.repo.PersonRepo;
+        import org.springframework.beans.factory.annotation.Autowired;
+        import org.springframework.stereotype.Component;
+        
+        @Component
+        public class CoffeeShopService {
+            @Autowired
+            PersonRepo repo;
+            public Iterable<Person> getPeople(){
+                return repo.findAll();
+            }
+        }
+
+1. Finally let's add the following function to `src\main\java\org\gleason\coffeeshop\Endpoint.java`
+
+        package org.gleason;
+        import org.gleason.coffeeshop.domain.Person;
+        import org.gleason.coffeeshop.service.CoffeeShopService;
+        import org.springframework.web.bind.annotation.*;
+        import org.springframework.beans.factory.annotation.Autowired;
+
+        @RestController
+        public class Endpoint{
+            @Autowired
+            CoffeeShopService service;
+        
+            @GetMapping("")
+            String get(){
+                return "hello world";
+            }
+        
+            // Add this!
+            @GetMapping("people")
+            String people(){
+                String result = "";
+                for(Person person : service.getPeople())
+                {
+                    result += person.getName();
+                }
+                return result;
+            }
+        }
+
+1. Now start the server again with `gradle bootRun` and navigate to `http://localhost:8080/people`. Notice the people...
+
+        // TODO: Show the people result
