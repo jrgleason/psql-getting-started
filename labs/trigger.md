@@ -6,8 +6,10 @@ Create a trigger that prevents users from adding more than 5 employees per store
 
 ## Lab
 
-1. TODO: Connect to RDS or Localhost
-1. TODO: Reset and reload database
+1. Reset [the coffeeshop schema](./ddl_dml_lab.md#reset-psql)
+1. Load the [initial db](./loading_sample_data_lab.md#loading-initial-db)
+1. Load the [first round of data](./CreateReciepts.md#first-insert)
+1. Connect to [the RDS instance and coffeeshop db](./creating_rds_instance.md#connect-psql)
 1. Add the following function to prevent more than 5 users being added
 
         DROP FUNCTION IF EXISTS MAIN.EMPLOYEE_COUNT();
