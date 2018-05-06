@@ -28,9 +28,9 @@
 
 1. Now we should be able to query this view like `SELECT * FROM BALANCES;`
 1. As you can see the balance on our account is $2000, while the balance on their account is $1000. This means the total amount of money in the system is $3000. This means the total system value should be 3000 unless external money is added.
-1. Now lets say they have made a purchase from us and give us $500. To do this lets do an insert into OUR_BALANCE...
+1. Now lets say they have made a purchase from us and give us $500. To do this lets do an insert into `OUR_ACCOUNT`...
 
-   INSERT INTO OUR_ACCOUNT VALUES (500);
+        INSERT INTO OUR_ACCOUNT VALUES (500);
    
 1. But **WAIT**, if we do `SELECT SUM(BALANCE) FROM BALANCES;`
 
