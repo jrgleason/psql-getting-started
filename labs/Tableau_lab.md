@@ -33,6 +33,6 @@
     4. Multiply that by Main.Product.Current Item Price
     ![Tab9](./resources/tab9.png "tab9")
     5. Click OK
-1. Drag the `Amount` field to the rows area of Tableau. Notice it imediately draws a Bar graph
+1. Drag the `Amount` field to the rows area of Tableau. Notice it immediately draws a Bar graph
 ![Tab10](./resources/tab10.png "tab10")
 1. **Task**: Try playing around for a bit with the different types of Graphs. Can you make a pie graph that shows the percentage of revenue for each product sold?
