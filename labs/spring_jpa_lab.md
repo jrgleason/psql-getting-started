@@ -113,4 +113,4 @@
 
 1. Now start the server again with `gradle bootRun` and navigate to `http://localhost:8080/people`. Notice the people...
 
-        // TODO: Show the people result
+![Response](./resources/StartServer.png)
